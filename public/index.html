@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Social App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>🌐 Social Connect</h1>
+    <div id="user-selector">
+      <label>Active User: </label>
+      <select id="current-user" onchange="switchUser()"></select>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Left Column: User Profile & Follow Section -->
+    <aside class="sidebar">
+      <div id="profile-card" class="card">
+        <h3>User Profile</h3>
+        <p id="profile-name">Loading...</p>
+        <p id="profile-bio" class="bio"></p>
+        <div class="stats">
+          <span>Followers: <strong id="followers-count">0</strong></span>
+          <span>Following: <strong id="following-count">0</strong></span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Discover People</h3>
+        <ul id="user-list"></ul>
+      </div>
+    </aside>
+
+    <!-- Right Column: Feed & Post Creation -->
+    <section class="feed-section">
+      <div class="card create-post">
+        <h3>Create Post</h3>
+        <textarea id="post-content" placeholder="What's on your mind?"></textarea>
+        <button onclick="createPost()">Publish</button>
+      </div>
+
+      <h2>Feed</h2>
+      <div id="posts-feed"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
